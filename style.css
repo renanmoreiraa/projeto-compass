@@ -1,4 +1,3 @@
-/* Global styles */
 * {
     margin: 0;
     padding: 0;
@@ -21,16 +20,15 @@ header {
 
 /* Espaçamento do logotipo para mover os links para a esquerda */
 .logo {
-    margin-right: 300px; /* Ajuste este valor conforme necessário */
+    margin-right: 300px;
 }
 
-/* Alternativa: adicione margem esquerda nos links do menu */
 .nav-links {
     flex-grow: 1;
     display: flex;
     justify-content: center;
     gap: 15px;
-    margin-left: -20px; /* Valor negativo para mover para a esquerda, ajuste conforme necessário */
+    margin-left: -20px; 
 }
 
 .nav-links a {
@@ -51,7 +49,7 @@ header {
 
 /* Ajuste dos ícones para tamanhos uniformes */
 .header-icons .icon img.header-icon {
-    width: 150px; /* Defina um tamanho consistente */
+    width: 150px; 
     height: auto;
     display: block;
 }
@@ -78,7 +76,7 @@ header {
     text-align: center;
     overflow: hidden;
     color: #fff;
-    background-color: #d32f2f; /* Cor de fundo padrão enquanto as imagens carregam */
+    background-color: #d32f2f;
 }
 
 .hero-images {
@@ -89,6 +87,26 @@ header {
     height: 100%;
     display: flex;
     transition: transform 0.5s ease-in-out;
+}
+
+/* Barra de Progresso no Carrossel */
+.progress-bar {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.progress-bar .progress {
+    height: 100%;
+    background-color: #fff;
+    width: 0;
+    transition: width 0.5s ease;
 }
 
 .hero-image {
@@ -148,8 +166,8 @@ header {
 }
 
 .slider-arrow {
-    font-size: 2em; /* Adjust as needed */
-    color: #fff; /* Set color to white */
+    font-size: 2em;
+    color: #fff; 
     cursor: pointer;
     position: absolute;
     top: 50%;
@@ -162,24 +180,6 @@ header {
 
 .right-arrow {
     right: 20px;
-}
-
-.progress-bar {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 150px;
-    height: 5px;
-    background-color: rgba(255, 255, 255, 0.5);
-    overflow: hidden;
-    border-radius: 5px;
-}
-
-.progress-bar .progress {
-    width: 50%;
-    height: 100%;
-    background-color: #fff;
 }
 
 .product-section {
@@ -231,8 +231,8 @@ header {
 }
 
 .explore-link {
-    font-size: 0.85em;
-    color: #007bff;
+    font-size: 0.70em;
+    color: #000000;
     text-decoration: none;
 }
 
@@ -311,27 +311,6 @@ header {
 .product-categories .active {
     color: #007bff;
     font-weight: bold;
-}
-
-.category-arrows {
-    display: flex;
-    gap: 10px;
-}
-
-.left-arrow,
-.right-arrow {
-    font-size: 1em;
-    color: #333;
-    border: 1px solid #ddd;
-    padding: 5px 10px;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.left-arrow:hover,
-.right-arrow:hover {
-    color: #007bff;
-    border-color: #007bff;
 }
 
 .products {
@@ -447,7 +426,7 @@ header {
 .features-list {
     display: flex;
     justify-content: space-evenly;
-    gap: 10px; /* Reduza o valor para aproximar os itens */
+    gap: 10px;
     padding: 30px 40px;
     background-color: #fff;
 }
@@ -692,10 +671,9 @@ header {
 
 /* Bestseller Products Section */
 .bestseller-products {
-    
-    text-align: left;
-    padding: 40px 100px;
-    background-color: #ffffff;
+    text-align: center;
+    padding: 40px 0;
+    background-color: #f8f9fa;
 }
 
 .bestseller-products h2 {
@@ -703,28 +681,33 @@ header {
     font-weight: bold;
     color: #333;
     margin-bottom: 20px;
+    text-align: center; /* Centraliza o título */
 }
 
 .product-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
     gap: 20px;
-    justify-items: center;
+    justify-content: center;
 }
 
 .product-item {
-    background-color: #f8f9fa;
-    padding: 20px;
+    background-color: #ffffff;
+    padding: 15px;
     border-radius: 8px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    width: 180px; /* Define uma largura consistente */
+}
+
+.product-item:hover {
+    transform: scale(1.05);
 }
 
 .product-item img {
-    width: 200px;
+    width: 150px;
     height: auto;
     margin-bottom: 10px;
-    gap: 100px;
 }
 
 .product-item h3 {
@@ -752,8 +735,24 @@ header {
 .brand-logos {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center; /* Centraliza os logos na linha */
+    gap: 60px; /* Define o espaçamento entre as logos */
+    padding: 20px 0;
+    background-color: #f8f9fa; /* Define o fundo cinza-claro */
+}
 
+.brand-logos img {
+    width: 120px; /* Ajuste o tamanho das logos conforme necessário */
+    height: auto;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+    background: none; /* Garante que não há fundo ao redor */
+    border: none; /* Remove qualquer borda */
+    box-shadow: none; /* Remove qualquer sombra */
+}
+
+.brand-logos img:hover {
+    opacity: 1; /* Aumenta a opacidade no hover */
 }
 
 /* Featured Posts Section */
@@ -765,7 +764,7 @@ header {
 
 .section-subtitle {
     color: #007bff;
-    font-size: 1em;
+    font-size: 0.7em;
     margin-bottom: 10px;
     text-transform: uppercase;
 }
@@ -871,7 +870,7 @@ header {
 
 /* Footer Section */
 .footer {
-    background-color: #2c3e50;
+    background-color: #102b46;
     color: #ffffff;
     padding: 40px 20px;
     font-family: Arial, sans-serif;
