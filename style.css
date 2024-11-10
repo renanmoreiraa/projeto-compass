@@ -10,7 +10,6 @@ body {
     background-color: #f8f9fa;
 }
 
-/* Header Styling */
 header {
     display: flex;
     justify-content: space-between;
@@ -18,25 +17,27 @@ header {
     padding: 20px 40px;
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-
 }
 
+/* Espaçamento do logotipo para mover os links para a esquerda */
 .logo {
-    font-weight: bold;
-    font-size: 1.5em;
-    color: #2d3a4b;
+    margin-right: 300px; /* Ajuste este valor conforme necessário */
+}
+
+/* Alternativa: adicione margem esquerda nos links do menu */
+.nav-links {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-left: -20px; /* Valor negativo para mover para a esquerda, ajuste conforme necessário */
 }
 
 .nav-links a {
-    margin-right: 15px;
     color: #333;
     font-size: 0.95em;
     text-decoration: none;
-}
-
-.nav-links .dropdown-arrow {
-    font-size: 0.75em;
-    color: #333;
+    margin: 0 10px;
 }
 
 .nav-links a:hover {
@@ -48,42 +49,76 @@ header {
     height: auto;
 }
 
+/* Ajuste dos ícones para tamanhos uniformes */
+.header-icons .icon img.header-icon {
+    width: 150px; /* Defina um tamanho consistente */
+    height: auto;
+    display: block;
+}
+
+/* Alinhamento dos ícones */
 .header-icons {
     display: flex;
     align-items: center;
+    gap: 20px;
 }
 
-.header-icons a {
-    color: #007bff;
-    margin-left: 15px;
-    font-size: 1em;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
+/* Ajuste de cores para o hover */
+.header-icons a:hover {
+    color: #0056b3;
 }
 
-.header-icons .icon {
-    font-size: 1.1em;
-    color: #007bff;
-    margin-right: 5px;
-
-}
-
-/* Hero Section */
+/* Hero Section com Carrossel */
 .hero {
-    background: url('./images/hero-bg.png') center/cover no-repeat, #d32f2f;
-    color: #fff;
+    position: relative;
     height: 600px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    position: relative;
     overflow: hidden;
+    color: #fff;
+    background-color: #d32f2f; /* Cor de fundo padrão enquanto as imagens carregam */
+}
+
+.hero-images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
 }
 
 .hero-content {
+    position: relative;
     z-index: 1;
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.carousel-arrow {
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
 }
 
 .hero h1 {
@@ -111,6 +146,7 @@ header {
 .hero button:hover {
     background-color: #0056b3;
 }
+
 .slider-arrow {
     font-size: 2em; /* Adjust as needed */
     color: #fff; /* Set color to white */
