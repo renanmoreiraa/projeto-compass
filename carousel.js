@@ -26,6 +26,7 @@ function updateCarousel() {
     heroImages.style.transform = `translateX(-${currentSlide * 100}%)`;
 }
 
+
 // Função para atualizar a barra de progresso
 function updateProgressBar() {
     const progressWidth = ((currentSlide + 1) / totalSlides) * 100;
