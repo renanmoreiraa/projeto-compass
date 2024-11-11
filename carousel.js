@@ -3,7 +3,8 @@ const slides = document.querySelectorAll(".hero-image");
 const totalSlides = slides.length;
 const progressBar = document.querySelector(".progress-bar .progress");
 
-let slideInterval = setInterval(goToNextSlide, 5000); // Intervalo automático para troca de slide
+// Inicia o intervalo para troca automática dos slides
+let slideInterval = setInterval(goToNextSlide, 5000);
 
 // Função para ir ao próximo slide
 function goToNextSlide() {
@@ -31,19 +32,22 @@ function updateProgressBar() {
     progressBar.style.width = `${progressWidth}%`;
 }
 
-// Função para resetar o intervalo automático
+// Função para resetar o intervalo automático quando uma seta é clicada
 function resetSlideInterval() {
     clearInterval(slideInterval);
-    slideInterval = setInterval(goToNextSlide, 5000); // Reinicia o intervalo automático
+    slideInterval = setInterval(goToNextSlide, 5000);
 }
 
 // Adiciona os eventos de clique nas setas
 document.querySelector(".left-arrow").addEventListener("click", () => {
-    resetSlideInterval();
     goToPreviousSlide(); // Vai para o slide anterior
+    resetSlideInterval(); // Reseta o intervalo automático
 });
 
 document.querySelector(".right-arrow").addEventListener("click", () => {
-    resetSlideInterval();
     goToNextSlide(); // Vai para o próximo slide
+    resetSlideInterval(); // Reseta o intervalo automático
 });
+
+// Inicializa o primeiro estado da barra de progresso
+updateProgressBar();
